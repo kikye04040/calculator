@@ -47,16 +47,27 @@ public class App {
                     result = num1 / num2;
                 }
             }
+            else if ((cal != '+') && (cal != '-') && (cal != '*') && (cal != '/')) {
+                System.out.println("사칙연산자를 잘못 입력하셨습니다.");
+                continue;
+            }
             else {
                 System.out.println("숫자를 잘못 입력하셨습니다.");
                 continue;
             }
             System.out.println("결과: " + result);
 
-            // level 1-5
-            resultArray[index] = result;
-            index++;
-            System.out.println(index);
+            // level 1-6
+            if (index == 9) {
+                for (int i = 0; i < 10; i++) {
+                    resultArray[i - 1] = resultArray[i];
+                }
+                resultArray[9] = result;
+            }
+            else {
+                resultArray[index] = result;
+                index++;
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String endWord = sc.next();
