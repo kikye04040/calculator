@@ -72,6 +72,16 @@ public class App {
                 }
             }
 
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String inquiryWord = sc.next();
+            if (inquiryWord.equals("inquiry")) {
+                int count = 1;
+                for (int resultNum : resultArray) {
+                    System.out.println("결과: " + count + ": " + resultNum);
+                    count++;
+                }
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String endWord = sc.next();
             if (endWord.equals("exit")) {
