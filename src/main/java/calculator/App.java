@@ -1,13 +1,14 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> resultArray = new ArrayList<Integer>();
 
         // level 1-5
-        int[] resultArray = new int[10];
         int index = 0;
         /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
         /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
@@ -57,21 +58,22 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            // level 1-6
-            if (index == 9) {
-                for (int i = 0; i < 10; i++) {
-                    resultArray[i - 1] = resultArray[i];
+            resultArray.add(result);
+
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String removeWord = sc.next();
+            if (removeWord.equals("remove")) {
+                if (!resultArray.isEmpty()) {
+                    resultArray.remove(0);
+                    System.out.println("가장 오래된 결과가 삭제되었습니다.");
                 }
-                resultArray[9] = result;
-            }
-            else {
-                resultArray[index] = result;
-                index++;
+                else {
+                    System.out.println("삭제할 결과가 없습니다.");
+                }
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String endWord = sc.next();
-
             if (endWord.equals("exit")) {
                 break;
             }
