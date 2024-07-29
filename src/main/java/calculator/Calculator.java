@@ -56,4 +56,15 @@ public class Calculator {
             resultArray.remove(0);
         }
     }
+
+    public void inquiryResults() {
+        if (resultArray.isEmpty()) {
+            System.out.println("저장된 연산 결과가 없습니다.");
+        } else {
+            System.out.println("저장된 연산결과");
+            for (int i = 0; i < resultArray.size(); i++) {
+                System.out.println((i + 1) + ": " + resultArray.get(i));
+            }
+        }
+    }
 }

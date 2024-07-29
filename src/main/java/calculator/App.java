@@ -42,12 +42,7 @@ public class App {
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 String inquiryWord = sc.next();
                 if (inquiryWord.equals("inquiry")) {
-                    ArrayList<Integer> resultArray = calculator.getResultArray();
-                    int count = 1;
-                    for (int resultNum : resultArray) {
-                        System.out.println("결과: " + count + ": " + resultNum);
-                        count++;
-                    }
+                    calculator.inquiryResults();
                 }
 
                 System.out.println("연산 결과를 새로운 리스트로 설정하시겠습니까? (set 입력 시 설정)");
