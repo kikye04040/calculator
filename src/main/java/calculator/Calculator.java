@@ -16,6 +16,7 @@ class DivisionByZeroException extends Exception {
 
 public class Calculator {
     private ArrayList<Integer> resultArray;
+
     public Calculator() {
         this.resultArray = new ArrayList<>();
     }
