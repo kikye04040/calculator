@@ -16,10 +16,13 @@ class DivisionByZeroException extends Exception {
 
 public class Calculator {
     private ArrayList<Integer> resultArray;
+    private ArrayList<Double> circleAreaResults;
 
     public Calculator() {
         this.resultArray = new ArrayList<>();
     }
+
+    private static final double PI = 3.14;
 
     public int calculate(int num1, int num2, char cal) throws InvalidOperatorException, DivisionByZeroException {
         int result = 0;
@@ -44,6 +47,12 @@ public class Calculator {
         return result;
     }
 
+    public double calculateCircleArea(double radius) {
+        double area = PI * radius * radius;
+        circleAreaResults.add(area);
+        return area;
+    }
+
     public ArrayList<Integer> getResultArray() {
         return new ArrayList<>(resultArray);
     }
@@ -65,6 +74,26 @@ public class Calculator {
             System.out.println("저장된 연산결과");
             for (int i = 0; i < resultArray.size(); i++) {
                 System.out.println((i + 1) + ": " + resultArray.get(i));
+            }
+        }
+    }
+
+    public ArrayList<Double> getCircleAreaResults() {
+        return new ArrayList<>(this.circleAreaResults);
+    }
+
+    public void setCircleAreaResults(ArrayList<Double> results) {
+        this.circleAreaResults = new ArrayList<>(results);
+    }
+
+    public void dispalyCircleAreaResults() {
+        if (circleAreaResults.isEmpty()) {
+            System.out.println("조회할 데이터가 없습니다.");
+        }
+        else {
+            System.out.println("저장된 원의 넓이 결과");
+            for (int i = 0; i < circleAreaResults.size(); i++) {
+                System.out.println((i + 1) + ": " + circleAreaResults.get(i));
             }
         }
     }
