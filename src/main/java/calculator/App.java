@@ -10,8 +10,6 @@ public class App {
 
         // level 1-5
         int index = 0;
-        /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
-        /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
 
         // level 1-4
         while (true) {
@@ -32,27 +30,21 @@ public class App {
             int result = 0;
             if (cal == '+') {
                 result = num1 + num2;
-            }
-            else if (cal == '-') {
+            } else if (cal == '-') {
                 result = num1 - num2;
-            }
-            else if (cal == '*') {
+            } else if (cal == '*') {
                 result = num1 * num2;
-            }
-            else if (cal == '/') {
+            } else if (cal == '/') {
                 if (num2 == 0) {
                     System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     continue;
-                }
-                else {
+                } else {
                     result = num1 / num2;
                 }
-            }
-            else if ((cal != '+') && (cal != '-') && (cal != '*') && (cal != '/')) {
+            } else if ((cal != '+') && (cal != '-') && (cal != '*') && (cal != '/')) {
                 System.out.println("사칙연산자를 잘못 입력하셨습니다.");
                 continue;
-            }
-            else {
+            } else {
                 System.out.println("숫자를 잘못 입력하셨습니다.");
                 continue;
             }
@@ -66,8 +58,7 @@ public class App {
                 if (!resultArray.isEmpty()) {
                     resultArray.remove(0);
                     System.out.println("가장 오래된 결과가 삭제되었습니다.");
-                }
-                else {
+                } else {
                     System.out.println("삭제할 결과가 없습니다.");
                 }
             }
