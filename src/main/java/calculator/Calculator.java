@@ -16,6 +16,9 @@ class DivisionByZeroException extends Exception {
 
 public class Calculator {
     private ArrayList<Integer> resultArray;
+    public Calculator() {
+        this.resultArray = new ArrayList<>();
+    }
 
     public int calculate(int num1, int num2, char cal) throws InvalidOperatorException, DivisionByZeroException {
         int result = 0;
