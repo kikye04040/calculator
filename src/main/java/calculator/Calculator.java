@@ -42,4 +42,12 @@ public class Calculator {
 
         return result;
     }
+
+    public ArrayList<Integer> getResultArray() {
+        return new ArrayList<>(resultArray);
+    }
+
+    public void setResultArray(ArrayList<Integer> resultArray) {
+        this.resultArray = new ArrayList<>(resultArray);
+    }
 }
