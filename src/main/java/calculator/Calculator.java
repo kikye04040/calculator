@@ -50,4 +50,10 @@ public class Calculator {
     public void setResultArray(ArrayList<Integer> resultArray) {
         this.resultArray = new ArrayList<>(resultArray);
     }
+
+    public void removeResult() {
+        if (!resultArray.isEmpty()) {
+            resultArray.remove(0);
+        }
+    }
 }
