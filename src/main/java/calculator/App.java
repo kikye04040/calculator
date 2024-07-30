@@ -8,7 +8,8 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Calculator calculator = new Calculator();
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
 
         // level 1-5
         int index = 0;
@@ -33,27 +34,27 @@ public class App {
                     char cal = sc.next().charAt(0);
 
                     // level 1-3
-                    int result = calculator.calculate(num1, num2, cal);
+                    double result = arithmeticCalculator.calculate(num1, num2, cal);
                     System.out.println("결과: " + result);
 
                     System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                     String removeWord = sc.next();
                     if (removeWord.equals("remove")) {
-                        calculator.removeResult();
+                        arithmeticCalculator.removeResult();
                         System.out.println("가장 오래된 결과가 삭제되었습니다.");
                     }
 
                     System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                     String inquiryWord = sc.next();
                     if (inquiryWord.equals("inquiry")) {
-                        calculator.inquiryResults();
+                        arithmeticCalculator.inquiryResults();
                     }
 
                     System.out.println("연산 결과를 새로운 리스트로 설정하시겠습니까? (set 입력 시 설정)");
                     String setWord = sc.next();
                     if (setWord.equals("set")) {
-                        ArrayList<Integer> newResults = new ArrayList<>();
-                        calculator.setResultArray(newResults);
+                        ArrayList<Double> newResults = new ArrayList<>();
+                        arithmeticCalculator.setResultArray(newResults);
                         System.out.println("새로운 결과 리스트가 설정되었습니다.");
                     }
 
@@ -75,10 +76,10 @@ public class App {
                     double radius = sc.nextDouble();
                     sc.nextLine();
 
-                    double area = calculator.calculateCircleArea(radius);
+                    double area = circleCalculator.calculateCircleArea(radius);
                     System.out.println("원의 넓이: " + area);
 
-                    calculator.dispalyCircleAreaResults();
+                    circleCalculator.displayCircleAreaResults();
 
                 } catch (Exception e) {
                     System.out.println("반지름을 잘못 입력하셨습니다.");

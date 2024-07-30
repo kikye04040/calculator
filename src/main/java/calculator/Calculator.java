@@ -1,5 +1,8 @@
 package calculator;
 
+import com.sun.jdi.DoubleValue;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 class InvalidOperatorException extends Exception {
@@ -15,49 +18,18 @@ class DivisionByZeroException extends Exception {
 }
 
 public class Calculator {
-    private ArrayList<Integer> resultArray;
+    protected ArrayList<Double> resultArray;
     private ArrayList<Double> circleAreaResults;
 
     public Calculator() {
         this.resultArray = new ArrayList<>();
     }
 
-    private static final double PI = 3.14;
-
-    public int calculate(int num1, int num2, char cal) throws InvalidOperatorException, DivisionByZeroException {
-        int result = 0;
-        if (cal == '+') {
-            result = num1 + num2;
-        } else if (cal == '-') {
-            result = num1 - num2;
-        } else if (cal == '*') {
-            result = num1 * num2;
-        } else if (cal == '/') {
-            if (num2 == 0) {
-                throw new DivisionByZeroException("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-            } else {
-                result = num1 / num2;
-            }
-        } else if ((cal != '+') && (cal != '-') && (cal != '*') && (cal != '/')) {
-            throw new InvalidOperatorException("사칙연산자를 잘못 입력하셨습니다.");
-        }
-        System.out.println("결과: " + result);
-        resultArray.add(result);
-
-        return result;
-    }
-
-    public double calculateCircleArea(double radius) {
-        double area = PI * radius * radius;
-        circleAreaResults.add(area);
-        return area;
-    }
-
-    public ArrayList<Integer> getResultArray() {
+    public ArrayList<Double> getResultArray() {
         return new ArrayList<>(resultArray);
     }
 
-    public void setResultArray(ArrayList<Integer> resultArray) {
+    public void setResultArray(ArrayList<Double> resultArray) {
         this.resultArray = new ArrayList<>(resultArray);
     }
 
@@ -86,7 +58,7 @@ public class Calculator {
         this.circleAreaResults = new ArrayList<>(results);
     }
 
-    public void dispalyCircleAreaResults() {
+    public void displayCircleAreaResults() {
         if (circleAreaResults.isEmpty()) {
             System.out.println("조회할 데이터가 없습니다.");
         }
