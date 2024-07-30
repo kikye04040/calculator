@@ -31,10 +31,10 @@ public class App {
 
                     // level 1-2
                     System.out.print("사칙연산 기호를 입력하세요: ");
-                    char cal = sc.next().charAt(0);
+                    char op = sc.next().charAt(0);
 
                     // level 1-3
-                    double result = arithmeticCalculator.calculate(num1, num2, cal);
+                    double result = arithmeticCalculator.calculate(num1, num2, op);
                     System.out.println("결과: " + result);
 
                     System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
